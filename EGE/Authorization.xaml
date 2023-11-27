@@ -1,0 +1,69 @@
+﻿<Window x:Class="EGE.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EGE"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="720" Width="1250">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#DFD7D2"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+        </Style>
+        <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#DAC8B9"/>
+
+        </Style>
+        <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="30"/>
+
+        </Style>
+
+    </Window.Resources>
+
+    <Grid x:Name="Grid1" Background="#FFFEF1">
+        <local:Background/>
+        <StackPanel Orientation="Vertical" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" Margin="300,190,0,0">
+            <TextBlock Text="Вход в систему" Style="{StaticResource MyTextBlockStyle}"></TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Логин" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Login" Width="220" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Пароль" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Password" Width="220" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="Log_in" Content="Войти" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Center" Width="150" Margin="0,20,0,0" Click="Log_in_Click" >
+            </Button>
+            <Button x:Name="Register" Content="Зарегистрироваться" HorizontalAlignment="Center"  Background="Ivory" BorderBrush="White" Foreground="#FFB2B2B2" FontSize="11" Margin="0,10,0,0" Click="Register_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Window>
+

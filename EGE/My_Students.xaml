@@ -1,0 +1,117 @@
+﻿<Window x:Class="EGE.My_Students"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EGE"
+        mc:Ignorable="d"
+        Title="Мои ученики" Height="720" Width="1250">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF7F6D69"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FFCDC6C2"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="35"/>
+
+        </Style>
+        <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#DAC8B9"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
+
+        </Style>
+        <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <local:Background/>
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="100,0,0,0">
+
+            <Button x:Name="Profile" Content="Мой профиль" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,150,0,0" Click="Profile_Click" Cursor="Hand" >
+            </Button>
+            <Button x:Name="My_Message" Content="Cooбщения" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Cursor="Hand" >
+            </Button>
+            <Button x:Name="My_Classes" Content="Мои занятия" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Cursor="Hand" Click="My_Classes_Click" >
+            </Button>
+            
+            <Button x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Click="Exit_Click" Cursor="Hand">
+            </Button>
+        </StackPanel>
+        <DockPanel LastChildFill="False" >
+
+            <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="-100,20,0,0">
+                <Label Style="{StaticResource MyLabelStyle}" Content="Мои ученики"/>
+            </StackPanel>
+            <WrapPanel HorizontalAlignment="Center" Margin="300,0,0,0">
+                <StackPanel>
+                    <Image Source="https://w.forfun.com/fetch/c4/c493aac67877288476b0fc52d55f55cf.jpeg" Margin="20" Width ="150" Height="130"></Image>
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Иванова А. П.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_1" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    </Button>
+                    <Image Source="https://funik.ru/wp-content/uploads/2018/10/17478da42271207e1d86.jpg" Margin="20" Width ="150" Height="130"></Image>
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Александрова М. В.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_2" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    </Button>
+                </StackPanel>
+
+                <StackPanel >
+
+                    <Image Source="https://w.forfun.com/fetch/fe/fe22186dba2df35f07573604aa8a0e63.jpeg" Margin="20" Width ="150" Height="130"></Image>
+
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Петров Е. А.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_3" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    </Button>
+                    <Image Source="https://klike.net/uploads/posts/2023-02/1675496674_4-39.jpg" Margin="20" Width ="150" Height="130"></Image>
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Антонова М. Д.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_4" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    </Button>
+                </StackPanel>
+                <StackPanel Cursor="Hand"  >
+                    <Image Source="https://i.pinimg.com/originals/e8/8f/30/e88f3028afe762960b7a2c11837b34d1.jpg" Margin="20" Width ="150" Height="130"></Image>
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Щукина Д. К.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_5" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    </Button>
+                    <Image Source="https://koshka.top/uploads/posts/2021-11/1636408647_1-koshka-top-p-simpatichnikh-kotikov-1.jpg" Margin="20" Width ="150" Height="130"></Image>
+                    <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
+                        <TextBlock.Text>Попова А. Г.</TextBlock.Text>
+                    </TextBlock>
+                    <Button x:Name="Write_6" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" >
+                    </Button>
+                </StackPanel>
+            </WrapPanel>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище EGE_SchoolModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bot">
+          <Key>
+            <PropertyRef Name="ID_Curator" />
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Command" />
+            <PropertyRef Name="ID_Message" />
+          </Key>
+          <Property Name="ID_Curator" Type="int" Nullable="false" />
+          <Property Name="ID_User" Type="int" Nullable="false" />
+          <Property Name="ID_Command" Type="int" Nullable="false" />
+          <Property Name="ID_Message" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Command">
+          <Key>
+            <PropertyRef Name="ID_Command" />
+          </Key>
+          <Property Name="ID_Command" Type="int" Nullable="false" />
+          <Property Name="Text" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Curator">
+          <Key>
+            <PropertyRef Name="ID_Curator" />
+          </Key>
+          <Property Name="ID_Curator" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namee" Type="varchar" MaxLength="45" />
+          <Property Name="SecondName" Type="varchar" MaxLength="45" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="45" />
+          <Property Name="Number" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="45" />
+          <Property Name="Speciality" Type="varchar" MaxLength="45" />
+          <Property Name="Login" Type="varchar" MaxLength="45" />
+          <Property Name="Password" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Curator_Specialty">
+          <Key>
+            <PropertyRef Name="ID_Curator" />
+            <PropertyRef Name="ID_Speciality" />
+          </Key>
+          <Property Name="ID_Curator" Type="int" Nullable="false" />
+          <Property Name="ID_Speciality" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="ID_Message" />
+          </Key>
+          <Property Name="ID_Message" Type="int" Nullable="false" />
+          <Property Name="Text" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Speciality">
+          <Key>
+            <PropertyRef Name="ID_Speciality" />
+          </Key>
+          <Property Name="ID_Speciality" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namee" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Tariff">
+          <Key>
+            <PropertyRef Name="ID_Tariff" />
+          </Key>
+          <Property Name="ID_Tariff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namee" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Price" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Tariff">
+          <Key>
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Tariff" />
+          </Key>
+          <Property Name="ID_User" Type="int" Nullable="false" />
+          <Property Name="ID_Tariff" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Namee" Type="varchar" MaxLength="45" />
+          <Property Name="SecondName" Type="varchar" MaxLength="45" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="45" />
+          <Property Name="Number" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <Association Name="FK_Bot_Command">
+          <End Role="Command" Type="Self.Command" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Command">
+              <PropertyRef Name="ID_Command" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Command" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Curator">
+          <End Role="Curator" Type="Self.Curator" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curator">
+              <PropertyRef Name="ID_Curator" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Curator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Message">
+          <End Role="Message" Type="Self.Message" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="ID_Message" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Message" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curator_Specialty_Curator">
+          <End Role="Curator" Type="Self.Curator" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Curator_Specialty" Type="Self.Curator_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curator">
+              <PropertyRef Name="ID_Curator" />
+            </Principal>
+            <Dependent Role="Curator_Specialty">
+              <PropertyRef Name="ID_Curator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Curator_Specialty_Speciality">
+          <End Role="Speciality" Type="Self.Speciality" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Curator_Specialty" Type="Self.Curator_Specialty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Speciality">
+              <PropertyRef Name="ID_Speciality" />
+            </Principal>
+            <Dependent Role="Curator_Specialty">
+              <PropertyRef Name="ID_Speciality" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Tariff_Tariff">
+          <End Role="Tariff" Type="Self.Tariff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="User_Tariff" Type="Self.User_Tariff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tariff">
+              <PropertyRef Name="ID_Tariff" />
+            </Principal>
+            <Dependent Role="User_Tariff">
+              <PropertyRef Name="ID_Tariff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Tariff_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="User_Tariff" Type="Self.User_Tariff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="User_Tariff">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище EGE_SchoolModelContainer">
+          <EntitySet Name="Bot" EntityType="Self.Bot" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Command" EntityType="Self.Command" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curator" EntityType="Self.Curator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curator_Specialty" EntityType="Self.Curator_Specialty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tariff" EntityType="Self.Tariff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Tariff" EntityType="Self.User_Tariff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bot_Command" Association="Self.FK_Bot_Command">
+            <End Role="Command" EntitySet="Command" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Curator" Association="Self.FK_Bot_Curator">
+            <End Role="Curator" EntitySet="Curator" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Message" Association="Self.FK_Bot_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Users" Association="Self.FK_Bot_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curator_Specialty_Curator" Association="Self.FK_Curator_Specialty_Curator">
+            <End Role="Curator" EntitySet="Curator" />
+            <End Role="Curator_Specialty" EntitySet="Curator_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Curator_Specialty_Speciality" Association="Self.FK_Curator_Specialty_Speciality">
+            <End Role="Speciality" EntitySet="Speciality" />
+            <End Role="Curator_Specialty" EntitySet="Curator_Specialty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Tariff_Tariff" Association="Self.FK_User_Tariff_Tariff">
+            <End Role="Tariff" EntitySet="Tariff" />
+            <End Role="User_Tariff" EntitySet="User_Tariff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Tariff_Users" Association="Self.FK_User_Tariff_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="User_Tariff" EntitySet="User_Tariff" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EGE_SchoolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bot">
+          <Key>
+            <PropertyRef Name="ID_Curator" />
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Command" />
+            <PropertyRef Name="ID_Message" />
+          </Key>
+          <Property Name="ID_Curator" Type="Int32" Nullable="false" />
+          <Property Name="ID_User" Type="Int32" Nullable="false" />
+          <Property Name="ID_Command" Type="Int32" Nullable="false" />
+          <Property Name="ID_Message" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Command" Relationship="Self.FK_Bot_Command" FromRole="Bot" ToRole="Command" />
+          <NavigationProperty Name="Curator" Relationship="Self.FK_Bot_Curator" FromRole="Bot" ToRole="Curator" />
+          <NavigationProperty Name="Message" Relationship="Self.FK_Bot_Message" FromRole="Bot" ToRole="Message" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Bot_Users" FromRole="Bot" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Command">
+          <Key>
+            <PropertyRef Name="ID_Command" />
+          </Key>
+          <Property Name="ID_Command" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Command" FromRole="Command" ToRole="Bot" />
+        </EntityType>
+        <EntityType Name="Curator">
+          <Key>
+            <PropertyRef Name="ID_Curator" />
+          </Key>
+          <Property Name="ID_Curator" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namee" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="SecondName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Speciality" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Curator" FromRole="Curator" ToRole="Bot" />
+          <NavigationProperty Name="Speciality1" Relationship="Self.Curator_Specialty" FromRole="Curator" ToRole="Speciality" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="ID_Message" />
+          </Key>
+          <Property Name="ID_Message" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Message" FromRole="Message" ToRole="Bot" />
+        </EntityType>
+        <EntityType Name="Speciality">
+          <Key>
+            <PropertyRef Name="ID_Speciality" />
+          </Key>
+          <Property Name="ID_Speciality" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namee" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Curator" Relationship="Self.Curator_Specialty" FromRole="Speciality" ToRole="Curator" />
+        </EntityType>
+        <EntityType Name="Tariff">
+          <Key>
+            <PropertyRef Name="ID_Tariff" />
+          </Key>
+          <Property Name="ID_Tariff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namee" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.User_Tariff" FromRole="Tariff" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Namee" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="SecondName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Users" FromRole="Users" ToRole="Bot" />
+          <NavigationProperty Name="Tariff" Relationship="Self.User_Tariff" FromRole="Users" ToRole="Tariff" />
+        </EntityType>
+        <Association Name="FK_Bot_Command">
+          <End Role="Command" Type="Self.Command" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Command">
+              <PropertyRef Name="ID_Command" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Command" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Curator">
+          <End Role="Curator" Type="Self.Curator" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curator">
+              <PropertyRef Name="ID_Curator" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Curator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Message">
+          <End Role="Message" Type="Self.Message" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Message">
+              <PropertyRef Name="ID_Message" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_Message" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bot_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bot" Type="Self.Bot" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Bot">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Curator_Specialty">
+          <End Role="Curator" Type="Self.Curator" Multiplicity="*" />
+          <End Role="Speciality" Type="Self.Speciality" Multiplicity="*" />
+        </Association>
+        <Association Name="User_Tariff">
+          <End Role="Tariff" Type="Self.Tariff" Multiplicity="*" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="EGE_SchoolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bot" EntityType="Self.Bot" />
+          <EntitySet Name="Command" EntityType="Self.Command" />
+          <EntitySet Name="Curator" EntityType="Self.Curator" />
+          <EntitySet Name="Message" EntityType="Self.Message" />
+          <EntitySet Name="Speciality" EntityType="Self.Speciality" />
+          <EntitySet Name="Tariff" EntityType="Self.Tariff" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Bot_Command" Association="Self.FK_Bot_Command">
+            <End Role="Command" EntitySet="Command" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Curator" Association="Self.FK_Bot_Curator">
+            <End Role="Curator" EntitySet="Curator" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Message" Association="Self.FK_Bot_Message">
+            <End Role="Message" EntitySet="Message" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bot_Users" Association="Self.FK_Bot_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Bot" EntitySet="Bot" />
+          </AssociationSet>
+          <AssociationSet Name="Curator_Specialty" Association="Self.Curator_Specialty">
+            <End Role="Curator" EntitySet="Curator" />
+            <End Role="Speciality" EntitySet="Speciality" />
+          </AssociationSet>
+          <AssociationSet Name="User_Tariff" Association="Self.User_Tariff">
+            <End Role="Tariff" EntitySet="Tariff" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище EGE_SchoolModelContainer" CdmEntityContainer="EGE_SchoolEntities">
+          <EntitySetMapping Name="Bot">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Bot">
+              <MappingFragment StoreEntitySet="Bot">
+                <ScalarProperty Name="ID_Curator" ColumnName="ID_Curator" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Command" ColumnName="ID_Command" />
+                <ScalarProperty Name="ID_Message" ColumnName="ID_Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Command">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Command">
+              <MappingFragment StoreEntitySet="Command">
+                <ScalarProperty Name="ID_Command" ColumnName="ID_Command" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curator">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Curator">
+              <MappingFragment StoreEntitySet="Curator">
+                <ScalarProperty Name="ID_Curator" ColumnName="ID_Curator" />
+                <ScalarProperty Name="Namee" ColumnName="Namee" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Speciality" ColumnName="Speciality" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="ID_Message" ColumnName="ID_Message" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Speciality">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Speciality">
+              <MappingFragment StoreEntitySet="Speciality">
+                <ScalarProperty Name="ID_Speciality" ColumnName="ID_Speciality" />
+                <ScalarProperty Name="Namee" ColumnName="Namee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tariff">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Tariff">
+              <MappingFragment StoreEntitySet="Tariff">
+                <ScalarProperty Name="ID_Tariff" ColumnName="ID_Tariff" />
+                <ScalarProperty Name="Namee" ColumnName="Namee" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EGE_SchoolModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="Namee" ColumnName="Namee" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Curator_Specialty" TypeName="EGE_SchoolModel.Curator_Specialty" StoreEntitySet="Curator_Specialty">
+            <EndProperty Name="Curator">
+              <ScalarProperty Name="ID_Curator" ColumnName="ID_Curator" />
+            </EndProperty>
+            <EndProperty Name="Speciality">
+              <ScalarProperty Name="ID_Speciality" ColumnName="ID_Speciality" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="User_Tariff" TypeName="EGE_SchoolModel.User_Tariff" StoreEntitySet="User_Tariff">
+            <EndProperty Name="Tariff">
+              <ScalarProperty Name="ID_Tariff" ColumnName="ID_Tariff" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
