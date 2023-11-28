@@ -19,14 +19,30 @@ namespace EGE
     /// </summary>
     public partial class Profile : Window
     {
+        private readonly EGE_SchoolEntities _context;
+        private readonly Curator _curator;
         public Profile()
         {
-            InitializeComponent();
         }
+        public Profile(EGE_SchoolEntities context, Curator curator)
+        {
+            InitializeComponent();
+            _context = context;
+            _curator = curator;
+            NameTextBox.Text = _curator.Namee;
+            SurnameTextBox.Text = _curator.SecondName;
+            PatronymicTextBox.Text = _curator.Patronymic;
+            NumberTextBox.Text = _curator.Number;
+            EmailTextBox.Text = _curator.Email;
+            SpecialityTextBox.Text = _curator.Speciality;
+
+        }
+
+
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Authorization Auth = new Authorization(new EGE_SchoolEntities());
+            Authorization Auth = new Authorization();
             this.Hide();
             Auth.Show();
         }

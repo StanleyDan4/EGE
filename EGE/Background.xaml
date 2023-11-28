@@ -84,7 +84,7 @@
                     <SkewTransform/>
                     <RotateTransform Angle="0.093"/>
                     <TranslateTransform/>
-</TransformGroup>
+                </TransformGroup>
             </TextBlock.RenderTransform></TextBlock>
     </Grid>
 

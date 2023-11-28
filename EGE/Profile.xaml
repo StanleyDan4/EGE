@@ -63,17 +63,17 @@
                 <Label Style="{StaticResource MyLabelStyle}" Content="Личный кабинет" FontSize="35"></Label>
                 <Image Height="200" Width="150" Margin="-35,0,0,0"></Image>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Имя:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <TextBox x:Name="NameTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Фамилия:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <TextBox x:Name="SurnameTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Отчество:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <TextBox x:Name="PatronymicTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Телефон:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <TextBox x:Name="NumberTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Email:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <TextBox x:Name="EmailTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
                 <Label Style="{StaticResource MyLabelStyle}" Content="Область преподавания:" FontSize="25"></Label>
-                <TextBox Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+                <TextBox x:Name="SpecialityTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
 
             </StackPanel>
         </Grid>

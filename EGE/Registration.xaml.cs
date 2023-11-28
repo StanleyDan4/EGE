@@ -43,17 +43,17 @@ namespace EGE
             };
             _context.Curator.Add(curator);
             _context.SaveChanges();
-            MessageBox.Show("Вы успешно зарегистрировались!");
 
 
-            Authorization Auth = new Authorization(new EGE_SchoolEntities());
+            Authorization Auth = new Authorization();
             this.Hide();
             Auth.Show();
+            MessageBox.Show("Вы успешно зарегестрировались");
         }
 
         private void Already_Have_An_Account_Click(object sender, RoutedEventArgs e)
         {
-            Authorization Auth = new Authorization( new EGE_SchoolEntities());
+            Authorization Auth = new Authorization();
             this.Hide();
             Auth.Show();
         }

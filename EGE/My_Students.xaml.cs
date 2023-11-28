@@ -26,7 +26,7 @@ namespace EGE
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            Authorization auth = new Authorization(new EGE_SchoolEntities());
+            Authorization auth = new Authorization();
             this.Hide();
             auth.Show();
         }

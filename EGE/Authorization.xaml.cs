@@ -20,11 +20,12 @@ namespace EGE
     public partial class Authorization : Window
     {
         private readonly EGE_SchoolEntities _context;
-        public Authorization(EGE_SchoolEntities context)
+        public Authorization()
         {
             InitializeComponent();
-            _context = context;
+            _context = new EGE_SchoolEntities();
         }
+        
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
@@ -35,9 +36,28 @@ namespace EGE
 
         private void Log_in_Click(object sender, RoutedEventArgs e)
         {
-            Profile pr = new Profile();
-            this.Hide();
-            pr.Show();
+            Curator curator;
+            using (var context = new EGE_SchoolEntities())
+            {
+                var login = Login.Text;
+                var password = Password.Text;
+                curator = context.Curator.FirstOrDefault(c =>
+               c.Login == login && c.Password == password);
+            }
+            if (curator != null)
+            {
+                Profile profile = new Profile();
+                this.Hide();
+                profile.Show();
+
+                MessageBox.Show("Вы успешно авторизовались!");
+
+            }
+            else
+            {
+                MessageBox.Show("Неправильный логин или пароль");
+            }
+
         }
     }
 }
