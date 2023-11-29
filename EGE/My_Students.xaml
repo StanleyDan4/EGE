@@ -54,8 +54,7 @@
             </Button>
             <Button x:Name="My_Message" Content="Cooбщения" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Cursor="Hand" >
             </Button>
-            <Button x:Name="My_Classes" Content="Мои занятия" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Cursor="Hand" Click="My_Classes_Click" >
-            </Button>
+           
             
             <Button x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Click="Exit_Click" Cursor="Hand">
             </Button>

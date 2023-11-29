@@ -46,7 +46,7 @@ namespace EGE
             }
             if (curator != null)
             {
-                Profile profile = new Profile();
+                Profile profile = new Profile(new EGE_SchoolEntities(), curator);
                 this.Hide();
                 profile.Show();
 

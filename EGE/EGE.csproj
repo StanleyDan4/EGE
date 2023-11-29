@@ -70,6 +70,9 @@
     <Compile Include="Bot.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
+    <Compile Include="chat.xaml.cs">
+      <DependentUpon>chat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Command.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
@@ -93,9 +96,6 @@
     </Compile>
     <Compile Include="Message.cs">
       <DependentUpon>database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="My_classes.xaml.cs">
-      <DependentUpon>My_classes.xaml</DependentUpon>
     </Compile>
     <Compile Include="My_Students.xaml.cs">
       <DependentUpon>My_Students.xaml</DependentUpon>
@@ -133,7 +133,7 @@
     <Compile Include="Background.xaml.cs">
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
-    <Page Include="My_classes.xaml">
+    <Page Include="chat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

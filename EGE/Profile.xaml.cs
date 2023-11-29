@@ -21,9 +21,7 @@ namespace EGE
     {
         private readonly EGE_SchoolEntities _context;
         private readonly Curator _curator;
-        public Profile()
-        {
-        }
+       
         public Profile(EGE_SchoolEntities context, Curator curator)
         {
             InitializeComponent();
@@ -53,11 +51,6 @@ namespace EGE
             this.Hide();
             my_Students.Show();
         }
-        private void My_Classes_Click(object sender, RoutedEventArgs e)
-        {
-            My_classes my_Classes = new My_classes();
-            this.Hide();
-            my_Classes.Show();
-        }
+       
     }
 }

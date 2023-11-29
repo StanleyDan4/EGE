@@ -19,6 +19,7 @@ namespace EGE
     /// </summary>
     public partial class My_Students : Window
     {
+        Curator curator;
         public My_Students()
         {
             InitializeComponent();
@@ -33,15 +34,11 @@ namespace EGE
 
         private void Profile_Click(object sender, RoutedEventArgs e)
         {
-            Profile pr = new Profile();
+            Profile pr = new Profile(new EGE_SchoolEntities(),curator);
             this.Hide();
             pr.Show();
         }
-        private void My_Classes_Click(object sender, RoutedEventArgs e)
-        {
-            My_classes my_Classes = new My_classes();
-            this.Hide();
-            my_Classes.Show();
-        }
+       
+
     }
 }
