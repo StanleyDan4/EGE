@@ -94,6 +94,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Edit_Students.xaml.cs">
+      <DependentUpon>Edit_Students.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Message.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <DependentUpon>Background.xaml</DependentUpon>
     </Compile>
     <Page Include="chat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Edit_Students.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

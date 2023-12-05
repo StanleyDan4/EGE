@@ -6,74 +6,74 @@
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
         Title="Профиль" Height="720" Width="1250">
- 
-        <Window.Resources>
-            <Style x:Key="MyButtonStyle" TargetType="Button">
-                <Setter Property="Background" Value="#FF7F6D69"/>
-                <Setter Property="FontFamily" Value="Bahnschrift"/>
-                <Setter Property="Foreground" Value="#FFCDC6C2"/>
-                <Setter Property="FontSize" Value="30"/>
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="15"
+
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF7F6D69"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FFCDC6C2"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
                                 Background="{TemplateBinding Background}">
 
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-            <Style x:Key="MyLabelStyle" TargetType="Label">
-                <Setter Property="FontFamily" Value="Bahnschrift"/>
-                <Setter Property="Foreground" Value="#FF7F6D69"/>
-            </Style>
-            <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
-                <Setter Property="Opacity" Value="0.5"/>
-                <Setter Property="Background" Value="#DAC8B9"/>
-                <Setter Property="Width" Value="200"/>
-                <Setter Property="Height" Value="20"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="FontSize" Value="15"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+        </Style>
+        <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#DAC8B9"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="15"/>
 
-            </Style>
-            <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
-                <Setter Property="FontFamily" Value="Bahnschrift"/>
-                <Setter Property="Foreground" Value="#FF7F6D69"/>
-                <Setter Property="FontSize" Value="20"/>
-            </Style>
-        </Window.Resources>
-        <Grid>
-            <local:Background/>
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="100,0,0,0">
-                <Button x:Name="My_Students" Content="Мои ученики" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,150,0,0" Cursor="Hand" Click="My_Students_Click">
-                </Button>
-                <Button Click="Message_Click" x:Name="My_Messages" Content="Cooбщения" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Cursor="Hand" >
-                </Button>
+        </Style>
+        <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <local:Background/>
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="20,20,0,0">
+            <Button x:Name="My_Students" Content="Мои ученики" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,30,0,0" Cursor="Hand" Click="My_Students_Click">
+            </Button>
+            
+            <Button Click="Message_Click" x:Name="My_Messages" Content="Cooбщения" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Cursor="Hand" >
+            </Button>
             <Button x:Name="Edit" Content="Изменить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0" Cursor="Hand"  >
-                </Button>
-                <Button x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Click ="Exit_Click" Cursor="Hand" >
-                </Button>
-            </StackPanel>
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="350,0,0,0">
-                <Label Style="{StaticResource MyLabelStyle}" Content="Личный кабинет" FontSize="35"></Label>
-                <Image Height="200" Width="150" Margin="-35,0,0,0"></Image>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Имя:" FontSize="25"></Label>
+            </Button>
+            <Button x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Click ="Exit_Click" Cursor="Hand" >
+            </Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" >
+            <Label Style="{StaticResource MyLabelStyle}" Content="Личный кабинет" Margin="0,20,0,0" FontSize="35"></Label>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Имя:" FontSize="25"></Label>
             <TextBox x:Name="NameTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Фамилия:" FontSize="25"></Label>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Фамилия:" FontSize="25"></Label>
             <TextBox x:Name="SurnameTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Отчество:" FontSize="25"></Label>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Отчество:" FontSize="25"></Label>
             <TextBox x:Name="PatronymicTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Телефон:" FontSize="25"></Label>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Телефон:" FontSize="25"></Label>
             <TextBox x:Name="NumberTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Email:" FontSize="25"></Label>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Email:" FontSize="25"></Label>
             <TextBox x:Name="EmailTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
-                <Label Style="{StaticResource MyLabelStyle}" Content="Область преподавания:" FontSize="25"></Label>
-                <TextBox x:Name="SpecialityTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
+            <Label Style="{StaticResource MyLabelStyle}" Content="Специальность:" FontSize="25"></Label>
+            <TextBox x:Name="SpecialityTextBox" Style="{StaticResource MyTextBoxStyle}" Text="///////"></TextBox>
 
-            </StackPanel>
-        </Grid>
+        </StackPanel>
+    </Grid>
 </Window>
 

@@ -19,33 +19,39 @@ namespace EGE
     /// </summary>
     public partial class My_Students : Window
     {
-        Curator curator;
-        public My_Students()
+        public Curator Curator { get; set; }
+        public Users users { get; set; }
+        public My_Students(Curator curator)
         {
-         
+            Curator = curator;
+            NumberTextBox.Text = users.Namee;
             InitializeComponent();
+            
 
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            Authorization auth = new Authorization();
-            this.Hide();
-            auth.Show();
-        }
 
-        private void Profile_Click(object sender, RoutedEventArgs e)
-        {
-            Profile pr = new Profile(new EGE_SchoolEntities(),curator);
-            this.Hide();
-            pr.Show();
-        }
+    
 
-        private void Write_1_Click(object sender, RoutedEventArgs e)
-        {
-            chat Chatik = new chat(new EGE_SchoolEntities(), curator);
-            this.Hide();
-            Chatik.Show();
-        }
+    private void Exit_Click(object sender, RoutedEventArgs e)
+    {
+        Authorization auth = new Authorization();
+        this.Hide();
+        auth.Show();
     }
+
+    private void Profile_Click(object sender, RoutedEventArgs e)
+    {
+        Profile pr = new Profile(new EGE_SchoolEntities(), Curator);
+        this.Hide();
+        pr.Show();
+    }
+
+    private void Write_1_Click(object sender, RoutedEventArgs e)
+    {
+        chat Chatik = new chat(Curator);
+        this.Hide();
+        Chatik.Show();
+    }
+}
 }

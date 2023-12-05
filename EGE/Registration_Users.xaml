@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
         Title="Регистрация ученика" Height="720" Width="1250">
-    <!--<Window.Resources>-->
-    <!--<Style x:Key="MyButtonStyle" TargetType="Button">
+    <Window.Resources>
+    <Style x:Key="MyButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="#DFD7D2"/>
         <Setter Property="FontFamily" Value="Bahnschrift"/>
         <Setter Property="Foreground" Value="#FF7F6D69"/>
@@ -66,14 +66,18 @@
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
                     <Label  Content="Email" Style="{StaticResource MyLabelStyle}"></Label>
                     <TextBox  x:Name="Email" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    
                 </StackPanel>
-               
+                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                    <Label Content="Login" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Login"  Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                </StackPanel>
             </StackPanel>
             
             <Button x:Name="Register" Content="Зарегистрировать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Center" Width="180" Margin="0,20,0,0" Click="Register_Click" >
             </Button>
         </StackPanel>
 
-    </Grid>-->
+    </Grid>
 </Window>
 

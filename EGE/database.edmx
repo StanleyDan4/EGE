@@ -87,6 +87,7 @@
           <Property Name="Patronymic" Type="varchar" MaxLength="45" />
           <Property Name="Number" Type="varchar" MaxLength="20" />
           <Property Name="Email" Type="varchar" MaxLength="45" />
+			<Property Name="Login_Curator" Type="varchar" MaxLength="50"/>
         </EntityType>
         <Association Name="FK_Bot_Command">
           <End Role="Command" Type="Self.Command" Multiplicity="1">
@@ -324,7 +325,9 @@
           <Property Name="Patronymic" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Users" FromRole="Users" ToRole="Bot" />
+			<Property Name="Login_Curator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+
+			<NavigationProperty Name="Bot" Relationship="Self.FK_Bot_Users" FromRole="Users" ToRole="Bot" />
           <NavigationProperty Name="Tariff" Relationship="Self.User_Tariff" FromRole="Users" ToRole="Tariff" />
         </EntityType>
         <Association Name="FK_Bot_Command">
@@ -498,7 +501,10 @@
                 <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
+				  <ScalarProperty Name="Login_Curator" ColumnName="Login_Curator" />
+
+
+			  </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <AssociationSetMapping Name="Curator_Specialty" TypeName="EGE_SchoolModel.Curator_Specialty" StoreEntitySet="Curator_Specialty">

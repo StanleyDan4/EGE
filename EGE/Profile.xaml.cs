@@ -20,19 +20,19 @@ namespace EGE
     public partial class Profile : Window
     {
         private readonly EGE_SchoolEntities _context;
-        private Curator _curator;
+         Curator Curator { get; set; }
         
         public Profile(EGE_SchoolEntities context, Curator curator)
         {
             InitializeComponent();
             
-                    _curator = curator;
-            NameTextBox.Text = _curator.Namee;
-            SurnameTextBox.Text = _curator.SecondName;
-            PatronymicTextBox.Text = _curator.Patronymic;
-            NumberTextBox.Text = _curator.Number;
-            EmailTextBox.Text = _curator.Email;
-            SpecialityTextBox.Text = _curator.Speciality;
+                    Curator = curator;
+            NameTextBox.Text = Curator.Namee;
+            SurnameTextBox.Text = Curator.SecondName;
+            PatronymicTextBox.Text = Curator.Patronymic;
+            NumberTextBox.Text = Curator.Number;
+            EmailTextBox.Text = Curator.Email;
+            SpecialityTextBox.Text = Curator.Speciality;
 
         }
 
@@ -47,16 +47,24 @@ namespace EGE
 
         private void My_Students_Click(object sender, RoutedEventArgs e)
         {
-            My_Students my_Students = new My_Students();
+            My_Students my_Students = new My_Students(Curator);
             this.Hide();
             my_Students.Show();
         }
        private void Message_Click(object sender,RoutedEventArgs e)
         {
-            Profile profile = new Profile(new EGE_SchoolEntities(), _curator);
+            Profile profile = new Profile(new EGE_SchoolEntities(), Curator);
             this.Hide();
            
             profile.Show();
+        }
+
+        private void Registration_User_Click(object sender, RoutedEventArgs e)
+        {
+            Registration_Users registrUser = new Registration_Users( new EGE_SchoolEntities(),Curator);
+            this.Hide();
+
+            registrUser.Show();
         }
     }
 }
