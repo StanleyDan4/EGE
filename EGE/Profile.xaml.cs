@@ -25,7 +25,7 @@ namespace EGE
         public Profile(EGE_SchoolEntities context, Curator curator)
         {
             InitializeComponent();
-            _context = context;
+           
             _curator = curator;
             NameTextBox.Text = _curator.Namee;
             SurnameTextBox.Text = _curator.SecondName;

@@ -70,13 +70,13 @@
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Иванова А. П.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_1" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    <Button Click="Write_1_Click" x:Name="Write_1" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
                     </Button>
                     <Image Source="https://funik.ru/wp-content/uploads/2018/10/17478da42271207e1d86.jpg" Margin="20" Width ="150" Height="130"></Image>
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Александрова М. В.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_2" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    <Button Click="Write_1_Click" x:Name="Write_2" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
                     </Button>
                 </StackPanel>
 
@@ -87,13 +87,13 @@
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Петров Е. А.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_3" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    <Button Click="Write_1_Click" x:Name="Write_3" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
                     </Button>
                     <Image Source="https://klike.net/uploads/posts/2023-02/1675496674_4-39.jpg" Margin="20" Width ="150" Height="130"></Image>
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Антонова М. Д.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_4" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    <Button Click="Write_1_Click" x:Name="Write_4" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
                     </Button>
                 </StackPanel>
                 <StackPanel Cursor="Hand"  >
@@ -101,13 +101,13 @@
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Щукина Д. К.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_5" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
+                    <Button Click="Write_1_Click" x:Name="Write_5" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" Cursor="Hand" >
                     </Button>
                     <Image Source="https://koshka.top/uploads/posts/2021-11/1636408647_1-koshka-top-p-simpatichnikh-kotikov-1.jpg" Margin="20" Width ="150" Height="130"></Image>
                     <TextBlock Margin="5" TextWrapping="Wrap" HorizontalAlignment="Center" Style="{StaticResource MyTextBlockStyle}">
                         <TextBlock.Text>Попова А. Г.</TextBlock.Text>
                     </TextBlock>
-                    <Button x:Name="Write_6" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" >
+                    <Button Click="Write_1_Click" x:Name="Write_6" Content="Написать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="100" Margin="48,0,0,0" >
                     </Button>
                 </StackPanel>
             </WrapPanel>

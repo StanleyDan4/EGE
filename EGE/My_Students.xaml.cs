@@ -22,7 +22,9 @@ namespace EGE
         Curator curator;
         public My_Students()
         {
+         
             InitializeComponent();
+
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -38,7 +40,12 @@ namespace EGE
             this.Hide();
             pr.Show();
         }
-       
 
+        private void Write_1_Click(object sender, RoutedEventArgs e)
+        {
+            chat Chatik = new chat();
+            this.Hide();
+            Chatik.Show();
+        }
     }
 }

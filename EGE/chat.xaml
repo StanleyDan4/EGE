@@ -11,7 +11,7 @@
             <Setter Property="Background" Value="#DFD7D2"/>
             <Setter Property="FontFamily" Value="Bahnschrift"/>
             <Setter Property="Foreground" Value="#FF7F6D69"/>
-            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -32,6 +32,7 @@
         <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
             <Setter Property="Opacity" Value="0.5"/>
             <Setter Property="Background" Value="#DAC8B9"/>
+            <Setter Property="FontSize" Value="14"/>
 
         </Style>
         <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
@@ -39,7 +40,9 @@
             <Setter Property="Foreground" Value="#FF7F6D69"/>
             <Setter Property="FontSize" Value="30"/>
 
+
         </Style>
+        
 
     </Window.Resources>
 
@@ -48,8 +51,53 @@
 
         <DockPanel Background="Black" Width="600" HorizontalAlignment="Left" Margin="10">
             <DockPanel Background="White" Width="600"  Margin="5">
-               
-                <StackPanel  Background="AntiqueWhite" Width="300" VerticalAlignment="Top" Height="600">
+                <Grid ShowGridLines="False" Background="AntiqueWhite" Width="596">
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="14"  x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Click ="Exit_Click" Cursor="Hand" >
+                    </Button>
+                    <TextBox x:Name="TextBox_ShortInfo" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource MyTextBoxStyle}" />
+                    <Button x:Name="Button_Second_First" Content="Click" Grid.Column="0" Grid.Row="6" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Second_First"/>
+                    <Button x:Name="Button_Second_Second" Content="Click" Grid.Column="1" Grid.Row="6" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Second_Second"/>
+                    <Button x:Name="Button_Second_Third" Content="Click" Grid.Column="2" Grid.Row="6" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Second_Third" />
+
+                    <TextBox x:Name="TextBox_Start" TextWrapping="Wrap" AcceptsReturn="True" Style="{StaticResource MyTextBoxStyle}" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0 0 7 0"></TextBox>
+                    <Button Content="Тариф" Grid.Column="5" Grid.Row="3" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Tariff" />
+                    <Button Click="Button_Click_AboutUs"  Content="О нас" Grid.Column="4" Grid.Row="3" Style="{StaticResource MyButtonStyle}" Margin="3" />
+                   <Button Content="Цена" Grid.Column="6" Grid.Row="3" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Price"  />
+
+                    <TextBox TextWrapping="Wrap" AcceptsReturn="True" Style="{StaticResource MyTextBoxStyle}" x:Name="TextBox_Info" Grid.Column="2" Grid.Row="9" Grid.ColumnSpan="5" Grid.RowSpan="4"  />
+
+                    <!--<TextBox Grid.Column="0" Grid.Row="15" Grid.ColumnSpan="6"  />
+                    <Button Click="Button_Click_Email" Content="Отправить" Grid.Column="7" Grid.Row="15" Style="{StaticResource MyButtonStyle}" Margin="3" />-->
+
+                </Grid>
+                <!--<StackPanel  Background="AntiqueWhite" Width="300" VerticalAlignment="Top" Height="600">
                     <TextBox VerticalAlignment="Bottom"  Width="250" Height="50" Margin="10"></TextBox>
                     <TextBox VerticalAlignment="Bottom" Width="250" Height="50" Margin=" 0 60 0 0"></TextBox>
                     <TextBox VerticalAlignment="Bottom" Width="250" Height="50" Margin="10 150 0 70"></TextBox>
@@ -59,11 +107,11 @@
                     <TextBox VerticalAlignment="Bottom" Width="250" Height="50" Margin="10 70"></TextBox>
                     <TextBox VerticalAlignment="Bottom" Width="250" Height="100" Margin="10 2"></TextBox>
                     <TextBox VerticalAlignment="Bottom" Width="250" Height="50" Margin="10 100"></TextBox>
-                </StackPanel>
+                </StackPanel>-->
             
         </DockPanel>
         </DockPanel>
-        
+     
 
     </Grid>
 </Window>
