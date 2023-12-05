@@ -43,7 +43,7 @@ namespace EGE
 
         private void Write_1_Click(object sender, RoutedEventArgs e)
         {
-            chat Chatik = new chat();
+            chat Chatik = new chat(new EGE_SchoolEntities(), curator);
             this.Hide();
             Chatik.Show();
         }

@@ -79,7 +79,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="14"  x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Click ="Exit_Click" Cursor="Hand" >
+                    <Button Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="14"  x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0" Click="Button_Click_Exit"  Cursor="Hand" >
                     </Button>
                     <TextBox x:Name="TextBox_ShortInfo" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource MyTextBoxStyle}" />
                     <Button x:Name="Button_Second_First" Content="Click" Grid.Column="0" Grid.Row="6" Style="{StaticResource MyButtonStyle}" Margin="3" Click="Button_Click_Second_First"/>

@@ -23,8 +23,11 @@ namespace EGE
         private readonly EGE_SchoolEntities _context;
         private readonly Message _message;
         private Tariff _tariff;
-        public chat()
+        private Curator _curator;
+        
+        public chat(EGE_SchoolEntities context, Curator curator)
         {
+            _curator = curator;
             _context = new EGE_SchoolEntities();
             InitializeComponent();
             TextBox_Start.Text = "Привет! На связи Чат Бот нашей онлайн школы DA! Скорее узнай актуальную информацию про обучение!";
@@ -33,6 +36,7 @@ namespace EGE
             Button_Second_Second.Visibility = Visibility.Hidden;
             Button_Second_Third.Visibility = Visibility.Hidden;
             TextBox_Info.Visibility = Visibility.Hidden;
+            
         }
 
         private void Button_Click_AboutUs(object sender, RoutedEventArgs e)
@@ -205,15 +209,14 @@ namespace EGE
             }
 
         }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_Exit(object sender, RoutedEventArgs e)
         {
-            
-            Authorization profile = new Authorization();
+            Profile profile = new Profile(new EGE_SchoolEntities(), _curator);
             this.Hide();
             profile.Show();
         }
+        }
 
-       
-    }
+
 }
+

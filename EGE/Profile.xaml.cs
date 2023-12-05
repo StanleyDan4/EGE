@@ -20,13 +20,13 @@ namespace EGE
     public partial class Profile : Window
     {
         private readonly EGE_SchoolEntities _context;
-        private readonly Curator _curator;
-       
+        private Curator _curator;
+        
         public Profile(EGE_SchoolEntities context, Curator curator)
         {
             InitializeComponent();
-           
-            _curator = curator;
+            
+                    _curator = curator;
             NameTextBox.Text = _curator.Namee;
             SurnameTextBox.Text = _curator.SecondName;
             PatronymicTextBox.Text = _curator.Patronymic;
@@ -51,6 +51,12 @@ namespace EGE
             this.Hide();
             my_Students.Show();
         }
-       
+       private void Message_Click(object sender,RoutedEventArgs e)
+        {
+            Profile profile = new Profile(new EGE_SchoolEntities(), _curator);
+            this.Hide();
+           
+            profile.Show();
+        }
     }
 }

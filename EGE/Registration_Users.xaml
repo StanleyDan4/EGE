@@ -1,0 +1,79 @@
+﻿<Window x:Class="EGE.Registration_Users"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EGE"
+        mc:Ignorable="d"
+        Title="Регистрация ученика" Height="720" Width="1250">
+    <!--<Window.Resources>-->
+    <!--<Style x:Key="MyButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#DFD7D2"/>
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        <Setter Property="Foreground" Value="#FF7F6D69"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MyLabelStyle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        <Setter Property="Foreground" Value="#FF7F6D69"/>
+    </Style>
+    <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="Background" Value="#DAC8B9"/>
+
+    </Style>
+    <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        <Setter Property="Foreground" Value="#FF7F6D69"/>
+        <Setter Property="FontSize" Value="30"/>
+    </Style>
+    </Window.Resources>
+    <Grid>
+        <local:Background/>
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="100,160,0,0">
+            <TextBlock Text="Регистрация ученика" Style="{StaticResource MyTextBlockStyle}" Width="400"></TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Имя" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="First_Name"  Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                    <Label  Content="Фамилия" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox  x:Name="Second_Name" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                    <Label  Content="Отчество" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox  x:Name="Patronymic" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Телефон" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Telephone_Number" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="20,0,0,0">
+                    <Label  Content="Email" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox  x:Name="Email" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                </StackPanel>
+               
+            </StackPanel>
+            
+            <Button x:Name="Register" Content="Зарегистрировать" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Center" Width="180" Margin="0,20,0,0" Click="Register_Click" >
+            </Button>
+        </StackPanel>
+
+    </Grid>-->
+</Window>
+
