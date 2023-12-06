@@ -5,86 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
-        Title="Регистрация" Height="720" Width="1250">
-   <Window.Resources>
-    <Style x:Key="MyButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#DFD7D2"/>
-        <Setter Property="FontFamily" Value="Bahnschrift"/>
-        <Setter Property="Foreground" Value="#FF7F6D69"/>
-        <Setter Property="FontSize" Value="17"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="15"
+        Title="Регистрация преподавателя" Height="720" Width="1250" WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#DFD7D2"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
                                 Background="{TemplateBinding Background}">
 
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    <Style x:Key="MyLabelStyle" TargetType="Label">
-        <Setter Property="FontFamily" Value="Bahnschrift"/>
-        <Setter Property="Foreground" Value="#FF7F6D69"/>
-    </Style>
-    <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
-        <Setter Property="Opacity" Value="0.5"/>
-        <Setter Property="Background" Value="#DAC8B9"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+        </Style>
+        <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="#DAC8B9"/>
 
-    </Style>
-    <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Bahnschrift"/>
-        <Setter Property="Foreground" Value="#FF7F6D69"/>
-        <Setter Property="FontSize" Value="30"/>
-    </Style>
+        </Style>
+        <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
     </Window.Resources>
     <Grid>
-        <local:Background/>
-        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Margin="100,160,0,0">
-            <TextBlock Text="Регистрация преподавателя" Style="{StaticResource MyTextBlockStyle}" Width="400"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="389*"/>
+            <RowDefinition Height="315*"/>
+        </Grid.RowDefinitions>
+        <local:Background Grid.RowSpan="2"/>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="150,80,0,0" Grid.RowSpan="2" HorizontalAlignment="Left" Width="490">
+            <TextBlock Grid.Column="0" Text="Регистрация преподавателя"  HorizontalAlignment="Center" Margin="10" Style="{StaticResource MyTextBlockStyle}"  Width="400"></TextBlock>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Имя" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox x:Name="First_Name"  Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    <Label Content="Имя"  HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="First_Name"  HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                    <Label  Content="Фамилия" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Second_Name" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                    <Label Content="Фамилия" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Second_Name"  HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                    <Label  Content="Отчество" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Patronymic" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                    <Label Content="Отчество" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Patronymic"  HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="0,10,0,0">
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Телефон" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox x:Name="Telephone_Number" Style="{StaticResource MyTextBoxStyle}" Width="200" Height="25"></TextBox>
+                    <Label Content="Телефон" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Telephone_Number"  HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                    <Label  Content="Email" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Email" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    <Label Content="Email" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Email" HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                    <Label  Content="Область преподавания" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Speciality" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    <Label Content="Область преподавания" HorizontalAlignment="Stretch" Margin="0 0 0 0" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Speciality" Margin="0 0 0 0"  HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
             </StackPanel>
+
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <StackPanel Orientation="Vertical" Margin="0,0,0,0">
-                    <Label  Content="Логин" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Login" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    <Label Content="Логин" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Login" HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                    <Label  Content="Пароль" Style="{StaticResource MyLabelStyle}"></Label>
-                    <TextBox  x:Name="Password" Width="200" Height="25" Style="{StaticResource MyTextBoxStyle}"></TextBox>
+                    <Label Content="Пароль" HorizontalAlignment="Stretch" Style="{StaticResource MyLabelStyle}"></Label>
+                    <TextBox x:Name="Password" HorizontalAlignment="Stretch" Style="{StaticResource MyTextBoxStyle}"></TextBox>
                 </StackPanel>
             </StackPanel>
-            <Button x:Name="Register" Content="Зарегистрироваться" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Center" Width="180" Margin="0,20,0,0" Click="Register_Click" >
-            </Button>
-            <Button x:Name="Already_Have_An_Account" Content="Уже есть аккаунт?" HorizontalAlignment="Center"  Background="Ivory" BorderBrush="White" Foreground="#FFB2B2B2" FontSize="11" Click="Already_Have_An_Account_Click" Margin="0,10,0,0"/>
+
+            <Button x:Name="Register" Content="Зарегистрироваться" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Center" Width="180" Margin="-20,20,0,0" Click="Register_Click"/>
+
+            <Button x:Name="Already_Have_An_Account" Content="Уже есть аккаунт?" HorizontalAlignment="Center" Background="Ivory" BorderBrush="White" Foreground="#FFB2B2B2"   FontSize="11" Click="Already_Have_An_Account_Click" Margin="-20,10,0,0"/>
         </StackPanel>
 
     </Grid>

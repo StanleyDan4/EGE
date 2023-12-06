@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
-        Title="Edit_Students" Height="450" Width="800">
+        Title="Удаление" Height="200" Width="200">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#DFD7D2"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15"
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyLabelStyle" TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+        </Style>
+        <Style x:Key="MyTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Opacity" Value="0.5"/>
+            <Setter Property="Background" Value="#DAC8B9"/>
+
+        </Style>
+        <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Foreground" Value="#FF7F6D69"/>
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <local:Background></local:Background>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox TextWrapping="Wrap" Text="Email" x:Name="b" Style="{StaticResource MyTextBoxStyle}" Margin="10" PreviewKeyDown="e_PreviewKeyDown" TextChanged="b_TextChanged"/>
+            <Button  Content ="Удалить" x:Name="Delete" Style="{StaticResource MyButtonStyle}" Margin="10" Click="Delete_Click" ></Button>
+        </StackPanel>
         
     </Grid>
 </Window>

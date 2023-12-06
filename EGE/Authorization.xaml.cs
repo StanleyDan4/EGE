@@ -46,11 +46,10 @@ namespace EGE
             }
             if (curator != null)
             {
+                MessageBox.Show("Вы успешно авторизовались!");
                 Profile profile = new Profile(new EGE_SchoolEntities(), curator);
                 this.Hide();
                 profile.Show();
-
-                MessageBox.Show("Вы успешно авторизовались!");
 
             }
             else

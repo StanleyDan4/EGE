@@ -10,11 +10,14 @@
 namespace EGE
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
     public partial class EGE_SchoolEntities : DbContext
     {
+        internal readonly IEnumerable<object> List;
+
         public EGE_SchoolEntities()
             : base("name=EGE_SchoolEntities")
         {

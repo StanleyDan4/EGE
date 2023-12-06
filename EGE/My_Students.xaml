@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
-        Title="Мои ученики" Height="720" Width="1250">
+        Title="Мои ученики" Height="720" Width="1250" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#FF7F6D69"/>
@@ -49,7 +49,9 @@
     <Grid>
         <local:Background/>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="20,20,0,0">
-            <Button x:Name="Registration_User" Content="Добавить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,30,0,0" Cursor="Hand" Click="Registration_User_Click">
+            <Button x:Name="Edit_User" Content="Изменить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,30,0,0" Cursor="Hand" Click="Edit_User_Click" >
+            </Button>
+            <Button x:Name="Registration_User" Content="Добавить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Cursor="Hand" Click="Registration_User_Click" >
             </Button>
             <Button x:Name="Profile" Content="Мой профиль" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" FontSize="30" Width="200" Margin="0,15,0,0" Click="Profile_Click" Cursor="Hand" >
             </Button>
@@ -63,11 +65,17 @@
 
             <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="-20,20,0,0">
                 <Label Style="{StaticResource MyLabelStyle}" Content="Мои ученики"/>
-                <TextBox x:Name="NumberTextBox"  Style="{StaticResource MyTextBoxStyle}" Height="150" Margin="10"></TextBox>
-                <TextBox x:Name="NumberTex" Style="{StaticResource MyTextBoxStyle}" Height="150" Margin="10"></TextBox>
-                <TextBox x:Name="NumberTextBox1"  Style="{StaticResource MyTextBoxStyle}" Height="150" Margin="10"></TextBox>
             </StackPanel>
-            
         </DockPanel>
+        <DataGrid AutoGenerateColumns="True"     x:Name="table" HorizontalAlignment="Left" Height="200" Width="650" Margin="350,120,0,264" HeadersVisibility="Column" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID ученика" Width="0.13*" Binding="{Binding Column11}"/>
+                <DataGridTextColumn Header="Имя" Width="0.13*" Binding="{Binding Column22}"/>
+                <DataGridTextColumn Header="Фамилия" Width="0.13*" Binding="{Binding Column33}"/>
+                <DataGridTextColumn Header="Отчество" Width="0.13*" Binding="{Binding Column44}"/>
+                <DataGridTextColumn Header="Номер телефона" Width="0.13*" Binding="{Binding Column55}"/>
+                <DataGridTextColumn Header="Email" Width="0.13*" Binding="{Binding Column66}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

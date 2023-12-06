@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
-        Title="Профиль" Height="720" Width="1250">
+        Title="Профиль" Height="720" Width="1250" WindowState="Maximized">
 
     <Window.Resources>
         <Style x:Key="MyButtonStyle" TargetType="Button">
@@ -53,7 +53,7 @@
             
             <Button Click="Message_Click" x:Name="My_Messages" Content="Cooбщения" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Cursor="Hand" >
             </Button>
-            <Button x:Name="Edit" Content="Изменить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0" Cursor="Hand"  >
+            <Button x:Name="Edit_Button" Content="Изменить" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0" Cursor="Hand" Click="Edit_Button_Click"  >
             </Button>
             <Button x:Name="Exit" Content="Выход" Style="{StaticResource MyButtonStyle}" HorizontalAlignment="Left" Width="200" Margin="0,15,0,0"  Click ="Exit_Click" Cursor="Hand" >
             </Button>

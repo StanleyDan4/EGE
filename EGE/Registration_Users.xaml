@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EGE"
         mc:Ignorable="d"
-        Title="Регистрация ученика" Height="720" Width="1250">
+        Title="Регистрация ученика" Height="450" Width="1000">
     <Window.Resources>
     <Style x:Key="MyButtonStyle" TargetType="Button">
         <Setter Property="Background" Value="#DFD7D2"/>

@@ -66,5 +66,13 @@ namespace EGE
 
             registrUser.Show();
         }
+
+        private void Edit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Edit edit = new Edit( Curator);
+            this.Hide();
+
+            edit.Show();
+        }
     }
 }
